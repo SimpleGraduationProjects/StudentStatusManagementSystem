@@ -45,7 +45,7 @@
             async: {
                 enable: true,
                 type: "post",
-                url: "${basePath}section/tree"
+                url: "${pageContext.request.contextPath}/section/tree"
             },
             callback: {
                 onClick: function (event, treeId, treeNode) {
@@ -66,7 +66,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}section/query',
+            url: '${pageContext.request.contextPath}/section/query',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',
@@ -147,7 +147,7 @@
                 }
                 layer.confirm('真的删除行吗', function (index) {
                     $.ajax({
-                        url: "${basePath}section/delete",
+                        url: "${pageContext.request.contextPath}/section/delete",
                         type: "POST",
                         dataType: 'json',
                         data: "ids=" + arr.join(","),

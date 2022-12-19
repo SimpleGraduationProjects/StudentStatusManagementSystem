@@ -29,7 +29,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}section/query_teacher_section',
+            url: '${pageContext.request.contextPath}/section/query_teacher_section',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',

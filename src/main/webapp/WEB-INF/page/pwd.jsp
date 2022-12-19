@@ -98,7 +98,7 @@
         //修改密码
         form.on('submit(save)', function (data) {
             $.ajax({
-                url: "${basePath}pwd",
+                url: "${pageContext.request.contextPath}/pwd",
                 type: "POST",
                 dataType: 'json',
                 data: {

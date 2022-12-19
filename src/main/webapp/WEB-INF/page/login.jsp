@@ -10,10 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="${basePath}static/lib/layui-src/css/layui.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/layui-src/css/layui.css" media="all">
     <!--[if lt IE 9]>
-    <script src="${basePath}static/js/html5.min.js"></script>
-    <script src="${basePath}static/js/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/html5.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/respond.min.js"></script>
     <![endif]-->
     <style>
         html, body {
@@ -23,7 +23,7 @@
         }
 
         body {
-            background: url("${basePath}static/images/bg.jpg");
+            background: url("${pageContext.request.contextPath}/static/images/bg.jpg");
         }
 
         body:after {
@@ -138,7 +138,7 @@
                                autocomplete="off" class="layui-input">
                     </div>
                     <div class="layui-input-inline">
-                        <img type="image" src="${basePath}captcha/code" id="captchaImg"
+                        <img type="image" src="${pageContext.request.contextPath}/captcha/code" id="captchaImg"
                              style="cursor:pointer;margin-left: 10px;"/>
                     </div>
 
@@ -152,8 +152,8 @@
         </div>
     </div>
 </div>
-<script src="${basePath}static/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
-<script src="${basePath}static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
 <script>
     layui.use(['form', 'jquery'], function () {
         var form = layui.form,
@@ -169,7 +169,7 @@
         //进行登录操作
         form.on('submit(login)', function (data) {
             $.ajax({
-                url: "${basePath}login",
+                url: "${pageContext.request.contextPath}/login",
                 type: "POST",
                 dataType: "json",
                 data: data.field,

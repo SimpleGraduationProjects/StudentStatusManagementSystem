@@ -29,7 +29,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}section/query_student_section',
+            url: '${pageContext.request.contextPath}/section/query_student_section',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',
@@ -78,7 +78,7 @@
                 })
                 //发送ajax请求，完成选课操作
                 $.ajax({
-                    url: "${basePath}score/create",
+                    url: "${pageContext.request.contextPath}/score/create",
                     type: "POST",
                     dataType: 'json',
                     data: {

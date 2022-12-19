@@ -2,9 +2,9 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="${basePath}static/lib/layui-src/css/layui.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/css/style.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/layui-src/css/layui.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css" media="all">
 <body>
 <div class="layuimini-container layuimini-page-anim">
     <div class="layuimini-main width_60">
@@ -45,8 +45,8 @@
         </form>
     </div>
 </div>
-<script src="${basePath}static/lib/layui-src/layui.js" charset="utf-8"></script>
-<script src="${basePath}static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/lib/layui-src/layui.js" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
 <script>
     layui.use(['form', 'jquery'], function () {
         var form = layui.form,
@@ -57,7 +57,7 @@
         //监听提交
         form.on('submit(save)', function (data) {
             $.ajax({
-                url: "${basePath}teacher/update",
+                url: "${pageContext.request.contextPath}/teacher/update",
                 type: "POST",
                 contentType: 'application/json',
                 dataType: 'json',

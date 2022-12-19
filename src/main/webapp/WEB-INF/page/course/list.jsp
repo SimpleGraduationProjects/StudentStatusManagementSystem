@@ -121,7 +121,7 @@
                 }
                 layer.confirm('真的删除行吗', function (index) {
                     $.ajax({
-                        url: "${basePath}course/delete",
+                        url: "${pageContext.request.contextPath}/course/delete",
                         type: "POST",
                         dataType: 'json',
                         data: "ids=" + arr.join(","),

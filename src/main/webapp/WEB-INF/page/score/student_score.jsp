@@ -20,7 +20,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}score/query_student_score',
+            url: '${pageContext.request.contextPath}/score/query_student_score',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',

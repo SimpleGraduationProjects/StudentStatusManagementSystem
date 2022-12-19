@@ -51,7 +51,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}student/query',
+            url: '${pageContext.request.contextPath}/student/query',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',
@@ -128,7 +128,7 @@
                 }
                 layer.confirm('真的删除行吗', function (index) {
                     $.ajax({
-                        url: "${basePath}student/delete",
+                        url: "${pageContext.request.contextPath}/student/delete",
                         type: "POST",
                         dataType: 'json',
                         data: "ids=" + arr.join(","),

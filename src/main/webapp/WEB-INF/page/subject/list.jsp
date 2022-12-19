@@ -57,7 +57,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}subject/query',
+            url: '${pageContext.request.contextPath}/subject/query',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',
@@ -92,7 +92,7 @@
                     shade: 0.2, //弹框阴影
                     shadeClose: false, //是否设置点击阴影部分关闭弹框
                     area: ['50%', '50%'], //弹框大小
-                    content: "${basePath}subject/add", //弹框内容，可以是一个具体的url
+                    content: "${pageContext.request.contextPath}/subject/add", //弹框内容，可以是一个具体的url
                     end: function () {
                         table.reload('currentTableId');
                     }
@@ -114,7 +114,7 @@
                     shade: 0.2,
                     shadeClose: false,
                     area: ['50%', '50%'],
-                    content: '${basePath}subject/detail/' + data[0].id, //把用户选中的行的id作为参数传递给后端控制器
+                    content: '${pageContext.request.contextPath}/subject/detail/' + data[0].id, //把用户选中的行的id作为参数传递给后端控制器
                     end: function () {
                         table.reload('currentTableId');
                     }
@@ -134,7 +134,7 @@
                 }
                 layer.confirm('确定要删除吗', function (index) {
                     $.ajax({
-                        url: "${basePath}subject/delete",
+                        url: "${pageContext.request.contextPath}/subject/delete",
                         type: "POST",
                         dataType: 'json',
                         data: "ids=" + arr.join(","), //将数组的数据按照以','连接成字符串

@@ -16,14 +16,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="${basePath}static/lib/layui-src/css/layui.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/css/layuimini.css?v=2.0.1" media="all">
-    <link rel="stylesheet" href="${basePath}static/css/themes/default.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/css/public.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/layui-src/css/layui.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/layuimini.css?v=2.0.1" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/themes/default.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/public.css" media="all">
     <!--[if lt IE 9]>
-    <script src="${basePath}static/js/html5.min.js"></script>
-    <script src="${basePath}static/js/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/html5.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/respond.min.js"></script>
     <![endif]-->
     <style id="layuimini-bg-color">
     </style>
@@ -68,11 +68,11 @@
 
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;" layuimini-content-href="${basePath}info" data-title="基本资料"
+                                <a href="javascript:;" layuimini-content-href="${pageContext.request.contextPath}/info" data-title="基本资料"
                                    data-icon="fa fa-gears">基本资料</a>
                             </dd>
                             <dd>
-                                <a href="javascript:;" layuimini-content-href="${basePath}pwd" data-title="修改密码"
+                                <a href="javascript:;" layuimini-content-href="${pageContext.request.contextPath}/pwd" data-title="修改密码"
                                    data-icon="fa fa-gears">修改密码</a>
                             </dd>
                             <dd>
@@ -118,8 +118,8 @@
         </div>
     </div>
 </div>
-<script src="${basePath}static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
-<script src="${basePath}static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
 <script>
     layui.use(['jquery', 'layer', 'miniAdmin'], function () {
         var $ = layui.jquery,
@@ -127,7 +127,7 @@
             miniAdmin = layui.miniAdmin;
 
         var options = {
-            iniUrl: "${basePath}static/api/init.json",    //初始化接口
+            iniUrl: "${pageContext.request.contextPath}/static/api/init.json",    //初始化接口
             clearUrl: "api/clear.json", //缓存清理接口
             renderPageVersion: true,    //初始化页面是否加版本号
             bgColorDefault: 3,      //主题默认配置
@@ -142,7 +142,7 @@
         //退出登录
         $('.login-out').on("click", function () {
             layer.confirm('确定退出吗？', function (index) {
-                window.location.href = "${basePath}/logout";
+                window.location.href = "${pageContext.request.contextPath}//logout";
             });
         });
     });

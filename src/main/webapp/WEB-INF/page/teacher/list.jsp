@@ -51,7 +51,7 @@
         //表单渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}teacher/query',
+            url: '${pageContext.request.contextPath}/teacher/query',
             contentType: 'application/json',
             method: "post",
             toolbar: '#toolbar',
@@ -87,7 +87,7 @@
                     shade: 0.2,
                     shadeClose: false, //是否设置点击阴影部分关闭弹框
                     area: ['50%', '50%'],
-                    content: "${basePath}teacher/add",
+                    content: "${pageContext.request.contextPath}/teacher/add",
                     end: function () {
                         table.reload('currentTableId');
                     }
@@ -110,7 +110,7 @@
                     shade: 0.2,
                     shadeClose: false,
                     area: ['50%', '50%'],
-                    content: '${basePath}teacher/detail/' + data[0].id, //把用户选中的行的id作为参数传递给后端控制器
+                    content: '${pageContext.request.contextPath}/teacher/detail/' + data[0].id, //把用户选中的行的id作为参数传递给后端控制器
                     end: function () {
                         table.reload('currentTableId');
                     }
@@ -132,7 +132,7 @@
                 }
                 layer.confirm('确定要删除吗', function (index) {
                     $.ajax({
-                        url: "${basePath}teacher/delete",
+                        url: "${pageContext.request.contextPath}/teacher/delete",
                         type: "POST",
                         dataType: 'json',
                         data: "ids=" + arr.join(","),

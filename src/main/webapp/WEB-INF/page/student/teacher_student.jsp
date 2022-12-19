@@ -54,7 +54,7 @@
         //表格渲染
         table.render({
             elem: '#currentTableId',
-            url: '${basePath}student/teacher_student',
+            url: '${pageContext.request.contextPath}/student/teacher_student',
             method: "post",
             where: {
                 teacherId:${teacher.id}

@@ -3,8 +3,8 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="${basePath}static/css/style.css" media="all">
-    <link rel="stylesheet" href="${basePath}static/lib/layui-src/css/layui.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/style.css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/layui-src/css/layui.css" media="all">
 </head>
 <body>
 <div class="layuimini-container layuimini-page-anim">
@@ -41,8 +41,8 @@
         </form>
     </div>
 </div>
-<script src="${basePath}static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
-<script src="${basePath}static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/lib/layui-src/layui.js?<%=System.currentTimeMillis()%>" charset="utf-8"></script>
+<script src="${pageContext.request.contextPath}/static/js/lay-config.js?v=2.0.0" charset="utf-8"></script>
 <script>
     layui.use(['form'], function () {
         var $ = layui.jquery,
@@ -64,7 +64,7 @@
             }
 
             $.ajax({
-                url: "${basePath}section/teacher_student_score",
+                url: "${pageContext.request.contextPath}/section/teacher_student_score",
                 type: "POST",
                 dataType: 'json',
                 data: {
