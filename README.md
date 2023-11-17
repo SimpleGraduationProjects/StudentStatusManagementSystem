@@ -13,7 +13,7 @@
 <p align="center">
 	<img src="https://img.shields.io/badge/jdk-1.8-orange.svg"/>
     <img src="https://img.shields.io/badge/springboot-5.x-lightgrey.svg"/>
-    <img src="https://img.shields.io/badge/springmvc-3.x-blue.svg"/>
+    <img src="https://img.shields.io/badge/jsp-3.x-blue.svg"/>
     <img src="https://img.shields.io/badge/mybatis-3.x-yellow.svg"/>
 </p>
 
